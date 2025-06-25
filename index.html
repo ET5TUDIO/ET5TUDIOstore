@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ET5TUDIO - Home</title>
-    <script type="text/javascript" src="https://payhip.com/payhip.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -305,20 +304,19 @@
         </div>
     </template>
     
-    <template id="shop-page">
+ <template id="shop-page">
         <div class="container mx-auto px-6 py-20">
             <h2 class="section-title">Shop Serum 2 Presets</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Product 1 (Paid) -->
+                <!-- Product 1 (Paid with Payhip) -->
                 <div class="card flex flex-col">
                     <img src="https://iili.io/FTmVOPI.png" alt="Modern Pop Sounds Vol.1" class="w-full h-56 object-cover">
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-white">Modern Pop Sounds Vol.1</h3>
                         <p class="text-gray-400 mb-4 text-sm">24 Presets for Serum 2.</p>
                         <p class="text-2xl font-bold brand-text mb-4">$7.00</p>
-                           <!-- IMPORTANT: Replace '#' with your actual Payhip store link for this product -->
-                           <div class="mt-auto">
-                           <a href="https://payhip.com/b/6jMHX" class="payhip-buy-button" data-theme="blue" data-product="6jMHX">Buy Now</a>
+                        <div class="mt-auto">
+                           <a href="https://payhip.com/b/6jMHX" target="_blank" rel="noopener noreferrer" class="btn-primary w-full">Purchase</a>
                         </div>
                     </div>
                 </div>
