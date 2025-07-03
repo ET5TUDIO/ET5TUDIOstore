@@ -159,6 +159,22 @@
             font-weight: 700;
             z-index: 10;
         }
+        
+        /* Service Card Specific Styles */
+        .service-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .service-card .card-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .service-card ul {
+            flex-grow: 1;
+        }
+
 
         /* --- Audio Player Styles --- */
         .audio-player {
@@ -352,6 +368,7 @@
             <div class="hidden md:flex space-x-8 items-center">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
                 <a href="#shop" class="nav-link">Shop</a>
                 <a href="#donate" class="nav-link">Donate</a>
                 <a href="#contact" class="nav-link">Contact</a>
@@ -370,6 +387,7 @@
             </div>
             <a href="#home" class="block py-3 px-6 text-center nav-link mobile-nav-link">Home</a>
             <a href="#about" class="block py-3 px-6 text-center nav-link mobile-nav-link">About</a>
+            <a href="#services" class="block py-3 px-6 text-center nav-link mobile-nav-link">Services</a>
             <a href="#shop" class="block py-3 px-6 text-center nav-link mobile-nav-link">Shop</a>
             <a href="#donate" class="block py-3 px-6 text-center nav-link mobile-nav-link">Donate</a>
             <a href="#contact" class="block py-3 px-6 text-center nav-link mobile-nav-link">Contact</a>
@@ -510,7 +528,7 @@
                              <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="1" class="w-full max-w-xs">
                              <i class="fas fa-volume-up text-gray-400"></i>
                          </div>
-                         
+                        
                         <!-- Playlist -->
                         <div id="playlist" class="mt-6 max-h-40 overflow-y-auto rounded-lg bg-black bg-opacity-20 p-2">
                             <!-- Playlist items will be injected here by JavaScript -->
@@ -570,6 +588,116 @@
         </div>
     </template>
     
+    <template id="services-page">
+        <div class="container mx-auto px-4 sm:px-6 py-16 sm:py-20">
+            <h2 class="section-title">Services & Packages</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- Service Package 1: Demo -->
+                <div class="card service-card">
+                    <div class="p-6 card-content">
+                        <h3 class="text-2xl font-bold mb-3 text-white">Package 1: Demo</h3>
+                        <p class="text-5xl font-extrabold brand-text mb-4">$50</p>
+                        <p class="text-gray-300 mb-6 font-semibold">What's Included:</p>
+                        <ul class="space-y-3 text-gray-200 list-disc list-inside mb-6">
+                            <li>4 hours of studio time for recording</li>
+                            <li>As many songs as you can get done</li>
+                            <li>Professional mix of each song</li>
+                            <li>Master file (WAV and MP3)</li>
+                        </ul>
+                         <div class="mt-auto">
+                            <button data-page="request-form" data-service="Package 1: Demo" class="w-full btn-secondary py-3 px-5 rounded-lg font-bold navigate-btn">Get a Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Package 2: Single - Pro Production -->
+                <div class="card service-card border-2 border-white shadow-lg">
+                     <div class="card-badge !bg-indigo-500">Most Popular</div>
+                    <div class="p-6 pt-12 card-content">
+                        <h3 class="text-2xl font-bold mb-3 text-white">Package 2: Single - Pro Production</h3>
+                        <p class="text-5xl font-extrabold brand-text mb-4">$150<span class="text-lg font-medium text-gray-300">/song</span></p>
+                        <p class="text-gray-300 mb-6 font-semibold">What's Included:</p>
+                        <ul class="space-y-3 text-gray-200 list-disc list-inside mb-6">
+                            <li>Free pre-production consultation</li>
+                            <li>Up to 8 hours of studio time</li>
+                            <li>Full production & creative input</li>
+                            <li>Detailed mixing & mastering</li>
+                            <li>Instrumental & acapella mixdowns</li>
+                        </ul>
+                         <div class="mt-auto">
+                            <button data-page="request-form" data-service="Package 2: Single - Pro Production" class="w-full btn-primary py-3 px-5 rounded-lg font-bold navigate-btn">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Package 3: EP/Album -->
+                <div class="card service-card">
+                    <div class="p-6 card-content">
+                        <h3 class="text-2xl font-bold mb-3 text-white">Package 3: EP/Album (3-5+ Songs)</h3>
+                        <p class="text-5xl font-extrabold brand-text mb-4">$300+</p>
+                        <p class="text-gray-300 mb-6 font-semibold">What's Included:</p>
+                        <ul class="space-y-3 text-gray-200 list-disc list-inside mb-6">
+                            <li>All features of Package 2 for each song</li>
+                            <li>Dedicated block of studio time</li>
+                            <li>Ensures cohesive sound across project</li>
+                        </ul>
+                        <div class="mt-auto">
+                            <button data-page="request-form" data-service="Package 3: EP/Album" class="w-full btn-secondary py-3 px-5 rounded-lg font-bold navigate-btn">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- A La Carte Services Section -->
+            <div class="mt-20">
+                <h2 class="section-title">A La Carte Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Recording Services Card -->
+                    <div class="card p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-white">Recording Services</h3>
+                        <p class="text-gray-300 mb-4">Perfect for artists who just need to record a vocal or instrument part.</p>
+                        <p class="text-3xl font-bold brand-text mb-4">$30 - $60 <span class="text-lg font-medium text-gray-300">/ Hour</span></p>
+                        <button data-page="request-form" data-service="A La Carte: Recording Services" class="w-full btn-secondary py-3 px-5 rounded-lg font-bold navigate-btn">Request Time</button>
+                    </div>
+                    <!-- Mixing Services Card -->
+                    <div class="card p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-white">Mixing Services</h3>
+                        <div class="space-y-6">
+                            <!-- Standard Mix -->
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="text-xl font-semibold text-white">Standard Mix</h4>
+                                    <p class="text-2xl font-bold brand-text">$100 <span class="text-base font-medium text-gray-300">/ song</span></p>
+                                </div>
+                                <ul class="text-sm text-gray-300 list-disc list-inside space-y-1 mb-4">
+                                    <li>Up to 25 tracks</li>
+                                    <li>Leveling, EQ, compression, effects, automation</li>
+                                    <li>Up to 2 rounds of revisions</li>
+                                </ul>
+                                <button data-page="request-form" data-service="A La Carte: Standard Mix" class="w-full btn-secondary py-2 px-4 rounded-lg font-semibold navigate-btn">Request Mix</button>
+                            </div>
+                            <!-- Advanced Mix -->
+                            <div class="border-t border-white/20 pt-6">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="text-xl font-semibold text-white">Advanced Mix</h4>
+                                    <p class="text-2xl font-bold brand-text">$200 <span class="text-base font-medium text-gray-300">/ song</span></p>
+                                </div>
+                                <ul class="text-sm text-gray-300 list-disc list-inside space-y-1 mb-4">
+                                    <li>For complex arrangements</li>
+                                    <li>Extensive layers, vocal stacks, or effects</li>
+                                    <li>Up to 3 rounds of revisions</li>
+                                </ul>
+                                <button data-page="request-form" data-service="A La Carte: Advanced Mix" class="w-full btn-secondary py-2 px-4 rounded-lg font-semibold navigate-btn">Request Mix</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </template>
+
     <template id="shop-page">
         <div class="container mx-auto px-4 sm:px-6 py-16 sm:py-20">
             <h2 class="section-title">Shop Serum 2 Presets</h2>
@@ -618,8 +746,8 @@
                         <p class="text-gray-400 mb-4 text-sm card-description">5 Presets for Serum 2.</p>
                          <div class="mt-auto card-footer">
                              <div class="flex justify-between items-center">
-                                 <p class="text-2xl font-bold brand-text">$0.00</p>
-                                 <a href="https://payhip.com/b/w1K3o" download target="_blank" rel="noopener noreferrer" class="w-full btn-primary py-2 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 max-w-max"><i class="fas fa-download"></i> Download</a>
+                                  <p class="text-2xl font-bold brand-text">$0.00</p>
+                                  <a href="https://payhip.com/b/w1K3o" download target="_blank" rel="noopener noreferrer" class="w-full btn-primary py-2 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 max-w-max"><i class="fas fa-download"></i> Download</a>
                             </div>
                          </div>
                     </div>
@@ -635,8 +763,8 @@
                         <p class="text-gray-400 mb-4 text-sm card-description">5 Presets for Serum 2.</p>
                          <div class="mt-auto card-footer">
                              <div class="flex justify-between items-center">
-                                 <p class="text-2xl font-bold brand-text">$0.00</p>
-                                 <a href="https://payhip.com/b/u5QpG" download target="_blank" rel="noopener noreferrer" class="w-full btn-primary py-2 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 max-w-max"><i class="fas fa-download"></i> Download</a>
+                                  <p class="text-2xl font-bold brand-text">$0.00</p>
+                                  <a href="https://payhip.com/b/u5QpG" download target="_blank" rel="noopener noreferrer" class="w-full btn-primary py-2 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 max-w-max"><i class="fas fa-download"></i> Download</a>
                             </div>
                          </div>
                     </div>
@@ -722,6 +850,59 @@
         </div>
     </template>
 
+    <template id="request-form-page">
+        <div class="container mx-auto px-4 sm:px-6 py-16 sm:py-20">
+            <h2 id="request-form-title" class="section-title">Service Request</h2>
+            <div class="max-w-2xl mx-auto bg-[#1f2b71] p-6 sm:p-8 rounded-lg">
+                <form id="service-request-form" action="https://formsubmit.co/etaudiopro@gmail.com" method="POST">
+                    <!-- Hidden fields for Formspree -->
+                    <input type="hidden" name="_next" value="https://et5tudio.github.io/ET5TUDIOstore/#thank-you">
+                    <input type="hidden" id="form-subject" name="_subject" value="New Service Request!">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <div class="mb-4">
+                        <label for="request-name" class="block mb-2 text-sm font-medium text-white">Your Name</label>
+                        <input type="text" id="request-name" name="name" class="bg-[#283891] border border-[#3242a1] text-white text-sm rounded-lg focus:ring-white focus:border-white block w-full p-2.5" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="request-email" class="block mb-2 text-sm font-medium text-white">Your Email</label>
+                        <input type="email" id="request-email" name="email" class="bg-[#283891] border border-[#3242a1] text-white text-sm rounded-lg focus:ring-white focus:border-white block w-full p-2.5" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="request-details" class="block mb-2 text-sm font-medium text-white">Project Details</label>
+                        <textarea id="request-details" name="project_details" rows="4" class="bg-[#283891] border border-[#3242a1] text-white text-sm rounded-lg focus:ring-white focus:border-white block w-full p-2.5" placeholder="Tell me a little about your project (e.g., genre, number of tracks, what you need help with)." required></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label for="request-start-date" class="block mb-2 text-sm font-medium text-white">Desired Start Date & Time</label>
+                        <input type="text" id="request-start-date" name="start_date" class="bg-[#283891] border border-[#3242a1] text-white text-sm rounded-lg focus:ring-white focus:border-white block w-full p-2.5" placeholder="e.g., Next week, July 25th afternoon">
+                    </div>
+                    <div class="mb-6">
+                        <label for="request-questions" class="block mb-2 text-sm font-medium text-white">Any Questions?</label>
+                        <textarea id="request-questions" name="questions" rows="4" class="bg-[#283891] border border-[#3242a1] text-white text-sm rounded-lg focus:ring-white focus:border-white block w-full p-2.5" placeholder="Let me know if you have any questions for me."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-full py-3 px-5 rounded-lg font-bold flex items-center justify-center">
+                        <span>Submit Request</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </template>
+
+    <template id="thank-you-page">
+        <div class="container mx-auto px-4 sm:px-6 py-16 sm:py-20 text-center">
+            <div class="max-w-md mx-auto">
+                <i class="fas fa-check-circle text-6xl text-green-400 mb-6"></i>
+                <h2 class="section-title">Request Sent!</h2>
+                <p class="text-lg text-gray-300 mb-8">
+                    Thank you for your interest! I've received your request and will get back to you as soon as possible, typically within 24-48 hours.
+                </p>
+                <button data-page="home" class="btn-primary py-3 px-8 rounded-full font-bold text-lg uppercase navigate-btn">Back to Home</button>
+            </div>
+        </div>
+    </template>
+
+
     <!-- Firebase SDKs -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
@@ -779,6 +960,8 @@
 
 
         // --- Main App Logic ---
+        let selectedService = ''; // Variable to store the selected service name
+
         document.addEventListener('DOMContentLoaded', () => {
             const mainContent = document.getElementById('main-content');
             const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -826,6 +1009,13 @@
                         if (pageId === 'contact') {
                             initContactForm();
                         }
+                        if (pageId === 'request-form') {
+                            // Populate the request form with the selected service
+                            const formTitle = document.getElementById('request-form-title');
+                            const formSubject = document.getElementById('form-subject');
+                            if (formTitle) formTitle.textContent = `Request: ${selectedService}`;
+                            if (formSubject) formSubject.value = `Service Request: ${selectedService}`;
+                        }
 
                     } else {
                         console.error('Page template not found:', pageId);
@@ -841,14 +1031,11 @@
             
             // Unified navigation handler using event delegation
             document.body.addEventListener('click', (e) => {
-                // Find the closest navigation trigger (anchor with href starting with #, or element with data-page)
                 const navTrigger = e.target.closest('a[href^="#"], [data-page]');
 
-                // Proceed if a trigger is found, but ignore external links and download links
                 if (navTrigger && !navTrigger.hasAttribute('download') && !navTrigger.getAttribute('target')) {
                     const href = navTrigger.getAttribute('href');
                     
-                    // Ignore clicks on empty hash links (href="#") to prevent navigation errors
                     if (href === '#') {
                         e.preventDefault();
                         return;
@@ -856,7 +1043,11 @@
 
                     e.preventDefault();
                     
-                    // Determine the target page from data-page attribute or href
+                    // If the button has a service, store it before navigating
+                    if (navTrigger.dataset.service) {
+                        selectedService = navTrigger.dataset.service;
+                    }
+
                     const pageId = navTrigger.dataset.page || (href ? href.substring(1) : null);
                     
                     if (pageId) {
