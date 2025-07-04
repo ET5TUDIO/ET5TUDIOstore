@@ -379,7 +379,8 @@
             </button>
         </nav>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-[#1f2b71] shadow-xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+        <!-- FIXED: Added backdrop-blur-lg and a semi-transparent background for readability -->
+        <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-[#1d2b64]/80 backdrop-blur-lg shadow-xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
             <div class="flex justify-end p-4">
                 <button id="mobile-menu-close-button" class="text-2xl text-white p-2">
                     <i class="fas fa-times"></i>
@@ -607,7 +608,7 @@
                         </ul>
                          <div class="mt-auto">
                             <button data-page="request-form" data-service="Package 1: Demo" class="w-full btn-secondary py-3 px-5 rounded-lg font-bold navigate-btn">Get a Quote</button>
-                        </div>
+                         </div>
                     </div>
                 </div>
 
@@ -627,7 +628,7 @@
                         </ul>
                          <div class="mt-auto">
                             <button data-page="request-form" data-service="Package 2: Single - Pro Production" class="w-full btn-primary py-3 px-5 rounded-lg font-bold navigate-btn">Book Now</button>
-                        </div>
+                         </div>
                     </div>
                 </div>
 
