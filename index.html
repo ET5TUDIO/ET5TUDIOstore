@@ -264,7 +264,7 @@
         }
          input[type="range"]:hover::-moz-range-thumb {
             transform: scale(1.2);
-        }
+         }
         
         /* Playlist Styles */
         .playlist-item {
@@ -307,7 +307,9 @@
             position: relative;
             padding-bottom: 56.25%; /* 16:9 aspect ratio */
         }
-        .aspect-w-16 > iframe {
+        /* UPDATED: Added video to selector */
+        .aspect-w-16 > iframe,
+        .aspect-w-16 > video {
             position: absolute;
             top: 0;
             left: 0;
@@ -359,7 +361,7 @@
                 <a href="#home" class="block">
                     <img src="https://iili.io/F70I1jf.png" alt="ET5TUDIO Logo" class="h-16 sm:h-24 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/100x50/283891/FFFFFF?text=Logo';">
                 </a>
-                <div id="studio-status" flex items-center gap-2 bg-black/20 px-3 py-1.5 rounded-full cursor-pointer" title="Studio Status">
+                <div id="studio-status" class="flex items-center gap-2 bg-black/20 px-3 py-1.5 rounded-full cursor-pointer" title="Studio Status">
                     <div id="status-dot" class="status-dot"></div>
                     <span id="status-text" class="text-sm font-semibold text-white">Connecting...</span>
                 </div>
@@ -435,7 +437,7 @@
                         <div class="card flex flex-col">
                             <div class="card-badge">New Release</div>
                             <div class="h-56 overflow-hidden">
-                                <img src="https://iili.io/F5Oams1.png" alt="ET5TUDIO - Tech House Serum 2 Presets" class="w-full h-full object-cover card-image">
+                                <img src="https://iili.io/F5Oams1.png" alt="ET5TUDIO - Tech House Serum 2 Presets" class="w-full h-full object-cover card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x225/1f2b71/FFFFFF?text=Product';">
                             </div>
                             <div class="p-6 flex flex-col flex-grow">
                                 <h3 class="text-xl font-bold mb-2 text-white">ET5TUDIO - Tech House Serum 2 Presets</h3>
@@ -450,7 +452,7 @@
                         <div class="card flex flex-col">
                              <div class="card-tag">Free</div>
                              <div class="h-56 overflow-hidden">
-                                <img src="https://iili.io/F5Oams1.png" alt="ET5TUDIO - Tech House Serum 2 Presets PREVIEW" class="w-full h-full object-cover card-image">
+                                <img src="https://iili.io/F5Oams1.png" alt="ET5TUDIO - Tech House Serum 2 Presets PREVIEW" class="w-full h-full object-cover card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x225/1f2b71/FFFFFF?text=Product';">
                             </div>
                             <div class="p-6 flex flex-col flex-grow">
                                 <h3 class="text-xl font-bold mb-2 text-white">ET5TUDIO - Tech House Serum 2 Presets PREVIEW</h3>
@@ -465,7 +467,7 @@
                         <div class="card flex flex-col">
                              <div class="card-tag">Free</div>
                              <div class="h-56 overflow-hidden">
-                                <img src="https://iili.io/FTmVOPI.png" alt="Modern Pop Sounds Vol.1 PREVIEW" class="w-full h-full object-cover card-image">
+                                <img src="https://iili.io/FTmVOPI.png" alt="Modern Pop Sounds Vol.1 PREVIEW" class="w-full h-full object-cover card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x225/1f2b71/FFFFFF?text=Product';">
                             </div>
                             <div class="p-6 flex flex-col flex-grow">
                                 <h3 class="text-xl font-bold mb-2 text-white">Modern Pop Sounds Vol.1 PREVIEW</h3>
@@ -557,35 +559,55 @@
     </template>
 
     <template id="about-page">
-        <div class="container mx-auto px-4 sm:px-6 py-16 sm:py-20">
-            <div class="text-center mb-12">
-                <img src="https://iili.io/FTp4AFe.png" alt="Profile Picture" class="w-32 h-32 sm:w-40 sm:h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/160x160/283891/FFFFFF?text=Profile';">
-                <h2 class="section-title !mb-0">About ET5TUDIO</h2>
-            </div>
-            <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                <div class="text-lg text-gray-200 space-y-6">
-                    <p>ET5TUDIO is dedicated to helping artists in the Central Florida area bring their musical visions to life. Whether you're a singer-songwriter ready to record a polished demo for record labels or a band looking to independently distribute your music, my home recording studio is your creative sanctuary.</p>
-                    <p>I specialize in professional mixing and mastering services, ensuring your tracks have the clarity, depth, and impact they need to stand out. My passion is to provide a comfortable and collaborative environment where local musicians can refine their sound and take the next step in their careers. Let's work together to make your music heard.</p>
-                    <p class="font-bold text-white">CURRENTLY OFFERING LOW STARTER RATES!!!</p>
-                    <div>
-                        <h3 class="font-bold text-white text-xl mb-3">Services:</h3>
-                        <ul class="list-disc list-inside space-y-2">
-                            <li>Recording</li>
-                            <li>Mixing</li>
-                            <li>Mastering</li>
-                            <li>Demos</li>
-                            <li>Instrumentals</li>
-                            <li>Songwriting</li>
-                            <li>Sound Design</li>
-                            <li>Video Editing</li>
-                        </ul>
+        <div>
+            <!-- Video Section -->
+            <section class="py-16 sm:py-20">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <h2 class="section-title">Studio Preview</h2>
+                    <div class="max-w-4xl mx-auto">
+                        <div class="aspect-w-16 rounded-lg overflow-hidden shadow-2xl">
+                            <video autoplay loop muted playsinline>
+                                <source src="https://ET5TUDIO.github.io/ET5TUDIOstore/Video/Loop.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
                     </div>
-                    <p class="font-semibold">Contact me for Rates and Booking.</p>
                 </div>
-                <div class="mt-4 lg:mt-0">
-                    <img src="https://iili.io/FTpVcqN.jpg" alt="Studio Interior" class="rounded-lg shadow-2xl w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x400/283891/FFFFFF?text=Studio';">
+            </section>
+    
+            <!-- About Content Section -->
+            <section class="pb-16 sm:pb-20">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <div class="text-center mb-12">
+                        <img src="https://iili.io/FTp4AFe.png" alt="Profile Picture" class="w-32 h-32 sm:w-40 sm:h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/160x160/283891/FFFFFF?text=Profile';">
+                        <h2 class="section-title !mb-0">About ET5TUDIO</h2>
+                    </div>
+                    <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                        <div class="text-lg text-gray-200 space-y-6">
+                            <p>ET5TUDIO is dedicated to helping artists in the Central Florida area bring their musical visions to life. Whether you're a singer-songwriter ready to record a polished demo for record labels or a band looking to independently distribute your music, my home recording studio is your creative sanctuary.</p>
+                            <p>I specialize in professional mixing and mastering services, ensuring your tracks have the clarity, depth, and impact they need to stand out. My passion is to provide a comfortable and collaborative environment where local musicians can refine their sound and take the next step in their careers. Let's work together to make your music heard.</p>
+                            <p class="font-bold text-white">CURRENTLY OFFERING LOW STARTER RATES!!!</p>
+                            <div>
+                                <h3 class="font-bold text-white text-xl mb-3">Services:</h3>
+                                <ul class="list-disc list-inside space-y-2">
+                                    <li>Recording</li>
+                                    <li>Mixing</li>
+                                    <li>Mastering</li>
+                                    <li>Demos</li>
+                                    <li>Instrumentals</li>
+                                    <li>Songwriting</li>
+                                    <li>Sound Design</li>
+                                    <li>Video Editing</li>
+                                </ul>
+                            </div>
+                            <p class="font-semibold">Contact me for Rates and Booking.</p>
+                        </div>
+                        <div class="mt-4 lg:mt-0">
+                            <img src="https://iili.io/FTpVcqN.jpg" alt="Studio Interior" class="rounded-lg shadow-2xl w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x400/283891/FFFFFF?text=Studio';">
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
         </div>
     </template>
     
@@ -607,7 +629,7 @@
                             <li>Master file (WAV and MP3)</li>
                         </ul>
                          <div class="mt-auto">
-                            <button data-page="request-form" data-service="Package 1: Demo" class="w-full btn-secondary py-3 px-5 rounded-lg font-bold navigate-btn">Get a Quote</button>
+                             <button data-page="request-form" data-service="Package 1: Demo" class="w-full btn-secondary py-3 px-5 rounded-lg font-bold navigate-btn">Get a Quote</button>
                          </div>
                     </div>
                 </div>
@@ -627,7 +649,7 @@
                             <li>Instrumental & acapella mixdowns</li>
                         </ul>
                          <div class="mt-auto">
-                            <button data-page="request-form" data-service="Package 2: Single - Pro Production" class="w-full btn-primary py-3 px-5 rounded-lg font-bold navigate-btn">Book Now</button>
+                             <button data-page="request-form" data-service="Package 2: Single - Pro Production" class="w-full btn-primary py-3 px-5 rounded-lg font-bold navigate-btn">Book Now</button>
                          </div>
                     </div>
                 </div>
@@ -707,7 +729,7 @@
                 <div class="card flex flex-col">
                     <div class="card-badge">New Release</div>
                      <div class="h-56 overflow-hidden">
-                        <img src="https://iili.io/F5Oams1.png" alt="ET5TUDIO - Tech House Serum 2 Presets" class="w-full h-full object-cover card-image">
+                        <img src="https://iili.io/F5Oams1.png" alt="ET5TUDIO - Tech House Serum 2 Presets" class="w-full h-full object-cover card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x225/1f2b71/FFFFFF?text=Product';">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-white">ET5TUDIO - Tech House Serum 2 Presets</h3>
@@ -723,7 +745,7 @@
                 <!-- Product 1 (Paid with Payhip) -->
                 <div class="card flex flex-col">
                     <div class="h-56 overflow-hidden">
-                        <img src="https://iili.io/FTmVOPI.png" alt="Modern Pop Sounds Vol.1" class="w-full h-full object-cover card-image">
+                        <img src="https://iili.io/FTmVOPI.png" alt="Modern Pop Sounds Vol.1" class="w-full h-full object-cover card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x225/1f2b71/FFFFFF?text=Product';">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-white">Modern Pop Sounds Vol.1</h3>
@@ -740,7 +762,7 @@
                 <div class="card flex flex-col">
                     <div class="card-tag">Free</div>
                     <div class="h-56 overflow-hidden">
-                       <img src="https://iili.io/F5Oams1.png" alt="ET5TUDIO - Tech House Serum 2 Presets PREVIEW" class="w-full h-full object-cover card-image">
+                       <img src="https://iili.io/F5Oams1.png" alt="ET5TUDIO - Tech House Serum 2 Presets PREVIEW" class="w-full h-full object-cover card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x225/1f2b71/FFFFFF?text=Product';">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-white">ET5TUDIO - Tech House Serum 2 Presets PREVIEW</h3>
@@ -757,7 +779,7 @@
                 <div class="card flex flex-col">
                     <div class="card-tag">Free</div>
                     <div class="h-56 overflow-hidden">
-                       <img src="https://iili.io/FTmVOPI.png" alt="Modern Pop Sounds Vol.1 PREVIEW" class="w-full h-full object-cover card-image">
+                       <img src="https://iili.io/FTmVOPI.png" alt="Modern Pop Sounds Vol.1 PREVIEW" class="w-full h-full object-cover card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x225/1f2b71/FFFFFF?text=Product';">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-white">Modern Pop Sounds Vol.1 PREVIEW</h3>
@@ -774,7 +796,7 @@
                 <div class="card flex flex-col">
                      <div class="card-tag">Free</div>
                     <div class="h-56 overflow-hidden">
-                        <img src="https://iili.io/FTmWb1I.png" alt="FREE SYNTH STAB PRESET" class="w-full h-full object-cover card-image">
+                        <img src="https://iili.io/FTmWb1I.png" alt="FREE SYNTH STAB PRESET" class="w-full h-full object-cover card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x225/1f2b71/FFFFFF?text=Product';">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-white">FREE SYNTH STAB PRESET</h3>
@@ -913,17 +935,17 @@
         // IMPORTANT: Replace this with your actual Firebase project configuration.
         const firebaseConfig = {
 
- apiKey: "AIzaSyC5nPFZHU1INRx-JqDYBLPRKCXpQaEHmb8",
+    apiKey: "AIzaSyC5nPFZHU1INRx-JqDYBLPRKCXpQaEHmb8",
 
- authDomain: "et5tudio-website.firebaseapp.com",
+    authDomain: "et5tudio-website.firebaseapp.com",
 
- projectId: "et5tudio-website",
+    projectId: "et5tudio-website",
 
- storageBucket: "et5tudio-website.firebasestorage.app",
+    storageBucket: "et5tudio-website.firebasestorage.app",
 
- messagingSenderId: "400386121247",
+    messagingSenderId: "400386121247",
 
- appId: "1:400386121247:web:263d127cc157cf593c7f2a"
+    appId: "1:400386121247:web:263d127cc157cf593c7f2a"
 
 };
         // Initialize Firebase
